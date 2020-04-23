@@ -274,7 +274,7 @@ char* s;
 
 举例：
 ```cpp
-while(g_bOpen == 1)
+while (g_bOpen == 1)
 {
     // 空循环
 }
@@ -540,8 +540,8 @@ d++;
 赋值操作符包括： `=, +=, -=, *=, /=, %=, >>=, <<=, &=, |=, !=, ^=, ++, --`
 
 理由：
-已个类似于 `if(x = y)` 这样的写法是不明确、不清晰的，
-代码的作者也许是想写成这样：`if(x == y)`。
+已个类似于 `if (x = y)` 这样的写法是不明确、不清晰的，
+代码的作者也许是想写成这样：`if (x == y)`。
 
 举例：
 ```cpp
@@ -553,7 +553,7 @@ if (x -= dx)
 
 //应该这样写: 
 x -= dx; 
-if(x)
+if (x)
 {
     ...
 }
@@ -604,7 +604,7 @@ Goto 语句只在一种情况下有使价值，就是当要从多重循环深处
 // 不要像下面这样写代码：
 float number;
 ...
-if(number == 0) // 精确比较
+if (number == 0) // 精确比较
 ```
 
 #### 2.4.6 对 `switch` 语句中每个分支结尾的要求
@@ -661,30 +661,30 @@ int* y = &x;
 举例
 ```cpp
 //不要像下面这样写代码：
-whiIe(1)
+whiIe (1)
 {
     ...
 }
-if(test)
+if (test)
 {
     ...
 }
-for(i = 1; functlon_call(i); i++)
+for (i = 1; function_call(i); i++)
 {
     ...
 }
 
 // 最好这样写：
-AwaysTrue = true;
-whiIe(AwaysTrue == true)
+AlwaysTrue = true;
+while (AlwaysTrue == true)
 {
     ...
 }
-if(test == true)
+if (test == true)
 {
     ...
 }
-for(i = 1; functlon_call(i) == true; i++)
+for (i = 1; function_call(i) == true; i++)
 {
     ...
 }
@@ -895,7 +895,7 @@ void fun2(int b)
 ```cpp
 class CMyClass
 {
-    CMyCIass();
+    CMyClass();
     ...
 };
 ```
@@ -930,7 +930,7 @@ class CMyClass
 举例：
 ```cpp
 //应该这样写代码
-class CMyCIass
+class CMyClass
 {
     ...
     operator = (const CMyClass& object);
@@ -947,10 +947,10 @@ class CMyCIass
 
 举例
 ```cpp
-class CMyCIass
+class CMyClass
 {
     ...
-    ~CMyCIass();
+    ~CMyClass();
     ...
 };
 ```
@@ -987,8 +987,8 @@ class CMyCIass
 #### 2.8.9 类数据成员的访问控制
 规范级别：规则
 
-规则描述：类对外的接囗应该是完全功能化的，类中可以定义 `Public` 的成员函数，但不应
-该有 `Public` 的数据成员。
+规则描述：类对外的接囗应该是完全功能化的，类中可以定义 `public` 的成员函数，但不应
+该有 `public` 的数据成员。
 
 理由：
 要想改变对象的当前状态，应该通过它的成员函数来实现，而不应该通过直接设置它的数据成员这种方法。
