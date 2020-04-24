@@ -2,13 +2,13 @@
 #define ADMINWINDOW_H
 
 #include <QMainWindow>
-#include "dialogadduser.h"
 
 namespace Ui {
 class AdminWindow;
 }
 
 class QtWorkflow;
+class DialogAddUser;
 class AdminWindow : public QMainWindow
 {
     Q_OBJECT

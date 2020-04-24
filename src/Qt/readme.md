@@ -5,12 +5,12 @@
 核心类请不要放到本文件夹中，应当放到/src/core
 
 ### 编译
-把 Qt/ 和 core/ 内的所有 .h 文件和 .cpp 文件添加到 Qt 项目中，即可使用 Qmake 编译。<br/>
+用 Qt 打开 QtBuild.pro 即可<br/>
 调试程序请留意把 core/adminList.csv 放到可执行文件同一目录。
 
 ### QtWorkflow (Qt业务流程类)说明
-本文件夹内包含一个 QtWorkflow 业务流程类。
-可以引用 core/corelink.h ，从而在核心类中以 Workflow 类的名义调用 QtWorkflow
+QtWorkflow (Qt业务流程类) 是抽象类 Workflow 的派生类，实现 Workflow 的所有接口。
+核心类应当引用 "workflow.h" 调用 Workflow 类，不应直接调用 QtWorkflow。
 
 ### QtWorkflow (Qt业务流程类)的地位
 1、主函数中只创造一个业务流程类对象。也就是说，一切从业务流程类的构造函数开始执行。<br/>

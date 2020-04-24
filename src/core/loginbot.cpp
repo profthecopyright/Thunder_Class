@@ -1,15 +1,21 @@
 #include "loginbot.h"
-#include "corelink.h"
-#include "../Qt/qtworkflow.h"
+#include "workflow.h"
+#include "csvio.h"
 
 LoginBot::LoginBot(Workflow *w)
 {
     this->workflow = w;
     this->passwordWrongTimes = 0;
-    this->csv.read("adminList.csv");
+    this->csv = new CSVio();
+    this->csv->read("adminList.csv");
 }
 
-CSVio LoginBot::getDefaultCSV()
+LoginBot::~LoginBot()
+{
+    delete this->csv;
+}
+
+CSVio *LoginBot::getDefaultCSV()
 {
     return this->csv;
 }

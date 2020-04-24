@@ -1,5 +1,6 @@
 #include "adminwindow.h"
 #include "ui_adminwindow.h"
+#include "dialogadduser.h"
 #include <iostream>
 
 AdminWindow::AdminWindow(QtWorkflow *w, QWidget *parent) :

@@ -1,13 +1,50 @@
 ## 核心类说明
 请把核心类放到本文件夹中。<br/>
-**请勿**把 GUI 类放到本文件夹中。
+**请勿**把 GUI 类放到本文件夹中。<br/>
+以下内容中“类”有时表示“类的对象”
 
-# "corelink.h"
-在核心类中引用这个头文件，即可创建 Workflow 业务流程类指针。<br/>
+# Workflow
+这是一个抽象类，在特定编译环境应当创建特定派生类。<br/>
+**每一个核心类被创建时，应当传入业务流程类指针**，以便调用业务流程类的功能。<br/>
 无法在核心类中创建新的业务流程类对象。<br/>
 
+## 业务流程类使用这些函数调用核心类：
+```cpp
+virtual int onLogin(std::string, std::string);
+virtual void onAdminChangeList();
+virtual std::vector<std::string> onRequireAudioOutputList();
+virtual std::vector<std::string> onRequireAudioInputList();
+virtual int onSelectAudioOutput();
+virtual int onSelectAudioInput();
+virtual void onShareScreen();
+virtual void onShareAudio();
+virtual void onRaiseQuestion();
+virtual void onCreateTest();
+virtual void onStudentEnter();
+virtual void onFocusChange();
+```
+
+## 业务流程类使用这些函数调用GUI：
+```cpp
+//程序
+void quitApplication();
+//登录
+virtual bool closeLoginWindow();
+virtual void showLoginWindow();
+//课室相关
+virtual void showClassroomWindow();
+virtual bool closeClassroomWindow();
+//授课相关
+void showTeachWindow();
+bool closeTeachWindow();
+//管理相关
+virtual void showAdminWindow();
+virtual bool closeAdminWindow();
+virtual void addShowUsers(std::string, std::string, std::string, std::string);
+```
+
 # CSVio
-这个类用来读写csv文件。
+这个类用 std::fstream 来读写csv文件。
 
 ### bool CSVio::read(std::string dir)
 从指定路径读取文件。如果读取成功则返回true，并将结果存储到 ReadCSV::table 中。
