@@ -2,8 +2,8 @@
 
 skinparam classAttributeIconSize 0
 
-abstract User
-class User {
+
+abstract class User {
 	-name:String
 	+getName():String
 }
