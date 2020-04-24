@@ -2,20 +2,21 @@
 #define LOGINBOT_H
 
 #include <string>
-#include "corelink.h"
-#include "csvio.h"
 
+class Workflow;
+class CSVio;
 class LoginBot
 {
 public:
     LoginBot(Workflow *w);
+    ~LoginBot();
     int onLogin(std::string, std::string);
-    CSVio getDefaultCSV();
+    CSVio *getDefaultCSV();
 
 private:
     int passwordWrongTimes;
     Workflow *workflow;
-    CSVio csv;
+    CSVio *csv;
 };
 
 #endif // LOGINBOT_H

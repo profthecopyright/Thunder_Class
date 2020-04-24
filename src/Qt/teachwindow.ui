@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ClassroomWindow</class>
- <widget class="QMainWindow" name="ClassroomWindow">
+ <class>TeachWindow</class>
+ <widget class="QMainWindow" name="TeachWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>雷课堂课室</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -19,15 +19,15 @@
      <rect>
       <x>40</x>
       <y>30</y>
-      <width>161</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 30px</string>
+     <string notr="true">font:30px;</string>
     </property>
     <property name="text">
-     <string>雷课堂课室</string>
+     <string>授课窗口</string>
     </property>
    </widget>
    <widget class="Line" name="line">
@@ -36,7 +36,7 @@
       <x>40</x>
       <y>60</y>
       <width>721</width>
-      <height>20</height>
+      <height>16</height>
      </rect>
     </property>
     <property name="orientation">
@@ -47,9 +47,9 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>90</y>
+      <y>80</y>
       <width>721</width>
-      <height>441</height>
+      <height>461</height>
      </rect>
     </property>
    </widget>

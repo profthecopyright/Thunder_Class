@@ -4,8 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "corelink.h"
 
+class Workflow;
 class CSVio
 {
 public:

@@ -14,7 +14,7 @@
    <string>登录</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(159, 177, 223)</string>
+   <string notr="true">background-color:qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(255, 255, 0, 69), stop:0.375 rgba(255, 255, 0, 69), stop:0.423533 rgba(251, 255, 0, 145), stop:0.45 rgba(247, 255, 0, 208), stop:0.477581 rgba(255, 244, 71, 130), stop:0.518717 rgba(255, 218, 71, 130), stop:0.55 rgba(255, 255, 0, 255), stop:0.57754 rgba(255, 203, 0, 130), stop:0.625 rgba(255, 255, 0, 69), stop:1 rgba(255, 255, 0, 69))</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="userName">
@@ -45,8 +45,9 @@ font:20px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-font: 20px</string>
+     <string notr="true">font: 20px;
+background-color: rgba(255, 255, 255, 0)
+</string>
     </property>
     <property name="text">
      <string>用户名：</string>
@@ -62,8 +63,9 @@ font: 20px</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:rgb(255, 255, 255);
-font:20px;</string>
+     <string notr="true">font:20px;
+background-color: rgba(255, 255, 255, 0)
+</string>
     </property>
     <property name="text">
      <string>密码：</string>
@@ -98,7 +100,7 @@ font:20px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font:30px;
-color:rgb(255, 255, 255);
+background-color: rgba(255, 255, 255, 0)
 </string>
     </property>
     <property name="text">
