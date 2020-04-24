@@ -12,3 +12,5 @@
  [类图（进行中）](doc/类图plantUML.png)
   <br/><br/>
  [类文档](doc/类文档.md)
+  <br/><br/>
+ [代码风格规范及自动格式化](format)
