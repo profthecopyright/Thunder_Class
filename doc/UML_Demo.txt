@@ -1,0 +1,18 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+abstract User
+class User {
+	-name:String
+	+getName():String
+}
+
+User <|.. ClientUser
+User <|.. ServerUser
+User ..> OSAPIWrapper
+User ..> Message
+Workflow ..> User
+Workflow ..> GUIClasses
+
+@enduml
