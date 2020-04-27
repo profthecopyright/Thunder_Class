@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-class QtWorkflow;
+class QtGUIAdaptor;
 
 namespace Ui {
 class TeachWindow;
@@ -14,12 +14,12 @@ class TeachWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit TeachWindow(QtWorkflow *,QWidget *parent = nullptr);
+    explicit TeachWindow(QtGUIAdaptor*, QWidget* parent = nullptr);
     ~TeachWindow();
 
 private:
     Ui::TeachWindow *ui;
-    QtWorkflow *workflow;
+    QtGUIAdaptor *guiAdaptor;
 };
 
 #endif // TEACHWINDOW_H

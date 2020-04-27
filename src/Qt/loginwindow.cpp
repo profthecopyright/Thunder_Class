@@ -1,13 +1,13 @@
 #include "loginwindow.h"
-#include "qtworkflow.h"
 #include "ui_loginwindow.h"
+#include "../gui/qtguiadaptor.h"
 
-LoginWindow::LoginWindow(QtWorkflow *w, QWidget *parent)
+LoginWindow::LoginWindow(QtGUIAdaptor* w, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
-    this->workflow = w;
+    this->guiAdaptor = w;
 }
 
 LoginWindow::~LoginWindow()
@@ -20,5 +20,5 @@ void LoginWindow::on_loginButton_clicked()
     std::string username,password;
     username = this->ui->userName->text().toStdString();
     password = this->ui->userPassword->text().toStdString();
-    this->workflow->onLogin(username, password);
+    this->guiAdaptor->onLogin(username, password);
 }

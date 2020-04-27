@@ -7,18 +7,18 @@ namespace Ui {
 class ClassroomWindow;
 }
 
-class QtWorkflow;
+class QtGUIAdaptor;
 class ClassroomWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit ClassroomWindow(QtWorkflow*, QWidget *parent = nullptr);
+    explicit ClassroomWindow(QtGUIAdaptor*, QWidget *parent = nullptr);
     ~ClassroomWindow();
 
 private:
     Ui::ClassroomWindow *ui;
-    QtWorkflow *workflow;
+    QtGUIAdaptor *guiAdaptor;
 };
 
 #endif // CLASSROOMWINDOW_H

@@ -7,14 +7,14 @@ namespace Ui {
 class AdminWindow;
 }
 
-class QtWorkflow;
+class QtGUIAdaptor;
 class DialogAddUser;
 class AdminWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit AdminWindow(QtWorkflow *, QWidget *parent = nullptr);
+    explicit AdminWindow(QtGUIAdaptor *, QWidget *parent = nullptr);
     ~AdminWindow();
     void tableAddItem(QString, QString, QString, QString);
     void loadList(std::vector<std::vector<std::string>>);
@@ -24,7 +24,7 @@ private slots:
 
 private:
     Ui::AdminWindow *ui;
-    QtWorkflow *workflow;
+    QtGUIAdaptor *guiAdaptor;
     DialogAddUser *dialAdd;
 };
 

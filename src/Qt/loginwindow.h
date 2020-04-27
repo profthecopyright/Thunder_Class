@@ -8,20 +8,20 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class LoginWindow; }
 QT_END_NAMESPACE
 
-class QtWorkflow;
+class QtGUIAdaptor;
 class LoginWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    LoginWindow(QtWorkflow *, QWidget *parent = nullptr);
+    LoginWindow(QtGUIAdaptor*, QWidget* parent = nullptr);
     ~LoginWindow();
 
 private slots:
     void on_loginButton_clicked();
 
 private:
-    Ui::LoginWindow *ui;
-    QtWorkflow *workflow;
+    Ui::LoginWindow* ui;
+    QtGUIAdaptor* guiAdaptor;
 };
 #endif // LOGINWINDOW_H
