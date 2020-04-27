@@ -5,7 +5,7 @@
 #include <QString>
 #include <string>
 
-#include "../core/workflow.h"
+#include "guiadaptor.h"
 
 class AdminWindow;
 class ClassroomWindow;
@@ -13,24 +13,12 @@ class TeachWindow;
 class LoginWindow;
 class LoginBot;
 
-class QtWorkflow: public Workflow
+class QtGUIAdaptor: public GUIAdaptor
 {
 public:
-    QtWorkflow(int argc, char* argv[]);
-    ~QtWorkflow();
-//------------调用核心类的函数-------------------
-    int onLogin(std::string, std::string);
-    void onAdminChangeList();
-    std::vector<std::string> onRequireAudioOutputList();
-    std::vector<std::string> onRequireAudioInputList();
-    int onSelectAudioOutput();
-    int onSelectAudioInput();
-    void onShareScreen();
-    void onShareAudio();
-    void onRaiseQuestion();
-    void onCreateTest();
-    void onStudentEnter();
-    void onFocusChange();
+    QtGUIAdaptor(int argc, char* argv[]);
+    ~QtGUIAdaptor();
+
 //-----------核心类可用的函数-------------------
     void quitApplication();
 //登录相关
@@ -43,9 +31,8 @@ public:
     void showTeachWindow();
     bool closeTeachWindow();
 //管理相关
-    void showAdminWindow();
+    void showAdminWindow(std::vector<std::vector<std::string>>);
     bool closeAdminWindow();
-    void addShowUsers(std::string, std::string, std::string, std::string);
 
     QApplication *app;
 

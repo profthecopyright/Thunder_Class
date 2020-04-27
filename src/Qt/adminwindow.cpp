@@ -3,12 +3,12 @@
 #include "dialogadduser.h"
 #include <iostream>
 
-AdminWindow::AdminWindow(QtWorkflow *w, QWidget *parent) :
+AdminWindow::AdminWindow(QtGUIAdaptor *w, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AdminWindow)
 {
     ui->setupUi(this);
-    this->workflow = w;
+    this->guiAdaptor = w;
     this->dialAdd = new DialogAddUser(this);
 }
 
