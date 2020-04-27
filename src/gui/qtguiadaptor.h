@@ -11,7 +11,14 @@ class AdminWindow;
 class ClassroomWindow;
 class TeachWindow;
 class LoginWindow;
-class LoginBot;
+
+/***************************************************************
+【类名】            (必需)
+【功能】            (必需)
+【接口说明】        (必需)
+【开发者及日期】    (必需)
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
 
 class QtGUIAdaptor: public GUIAdaptor
 {
@@ -41,7 +48,6 @@ private:
     ClassroomWindow *classroomWindow;
     TeachWindow *teachWindow;
     AdminWindow *adminWindow;
-    LoginBot *loginBot;
 };
 
 #endif // QTWORKFLOW_H

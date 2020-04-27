@@ -1,11 +1,10 @@
 #include "adminwindow.h"
-#include "ui_adminwindow.h"
 #include "dialogadduser.h"
+#include "ui_adminwindow.h"
 #include <iostream>
 
-AdminWindow::AdminWindow(QtGUIAdaptor *w, QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::AdminWindow)
+AdminWindow::AdminWindow(QtGUIAdaptor* w, QWidget* parent)
+    : QMainWindow(parent), ui(new Ui::AdminWindow)
 {
     ui->setupUi(this);
     this->guiAdaptor = w;
@@ -18,7 +17,8 @@ AdminWindow::~AdminWindow()
     delete ui;
 }
 
-void AdminWindow::tableAddItem(QString id, QString name, QString password, QString role)
+void AdminWindow::tableAddItem(QString id, QString name, QString password,
+                               QString role)
 {
     int rowCount = ui->tableWidget->rowCount();
     this->ui->tableWidget->insertRow(rowCount);
@@ -30,15 +30,16 @@ void AdminWindow::tableAddItem(QString id, QString name, QString password, QStri
 
 void AdminWindow::loadList(std::vector<std::vector<std::string>> table)
 {
-    for(auto iter = table.begin(); iter != table.end(); iter++)
-    {
+    for (auto iter = table.begin(); iter != table.end(); iter++) {
         try {
             this->tableAddItem(QString::fromStdString(iter->at(0)),
                                QString::fromStdString(iter->at(1)),
                                QString::fromStdString(iter->at(2)),
                                QString::fromStdString(iter->at(3)));
-        } catch (std::out_of_range &e) {
-            std::cout<<"csv文件的这一行缺少所需字段："<<iter->at(0)<<std::endl;
+        }
+        catch (std::out_of_range& e) {
+            std::cout << "csv文件的这一行缺少所需字段：" << iter->at(0)
+                      << std::endl;
         }
     }
 }

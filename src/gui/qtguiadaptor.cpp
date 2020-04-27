@@ -1,20 +1,20 @@
 #include "qtguiadaptor.h"
-#include "../Qt/loginwindow.h"
-#include "../Qt/classroomwindow.h"
-#include "../Qt/teachwindow.h"
 #include "../Qt/adminwindow.h"
+#include "../Qt/classroomwindow.h"
+#include "../Qt/loginwindow.h"
+#include "../Qt/teachwindow.h"
 
 //函数：主函数
 //目标：创建一个业务流程类
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    QtGUIAdaptor workflow(argc,argv);
+    QtGUIAdaptor workflow(argc, argv);
     return workflow.app->exec();
 }
 
 //函数：构造
 //目标：创建窗口类
-QtGUIAdaptor::QtGUIAdaptor(int argc, char *argv[])
+QtGUIAdaptor::QtGUIAdaptor(int argc, char* argv[])
 {
     this->app = new QApplication(argc, argv);
     this->loginWindow = new LoginWindow(this);
@@ -96,4 +96,3 @@ bool QtGUIAdaptor::closeAdminWindow()
 {
     return this->adminWindow->close();
 }
-

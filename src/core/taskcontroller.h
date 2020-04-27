@@ -5,9 +5,17 @@
 #include <vector>
 
 class GUIAdaptor;
-class TaskController
-{
-public:
+
+/***************************************************************
+【类名】            TaskController
+【功能】            (必需)
+【接口说明】        (必需)
+【开发者及日期】    (必需)
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
+
+class TaskController {
+  public:
     TaskController(GUIAdaptor*);
     ~TaskController();
 
@@ -32,7 +40,8 @@ public:
     void onAskStudent();
     void onAskStudent(std::string);
     void onMicControl(bool);
-private:
+
+  private:
     GUIAdaptor* guiAdaptor;
 };
 

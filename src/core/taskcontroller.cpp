@@ -8,78 +8,77 @@ TaskController::TaskController(GUIAdaptor* g)
 
 TaskController::~TaskController()
 {
-
 }
 
 //登录
 void TaskController::onLogin(std::string, std::string)
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onExit()
 {
-    //TODO:
+    // TODO:
 }
 //管理
 void TaskController::onUserListChange()
 {
-    //TODO:
+    // TODO:
 }
 //学生端
 void TaskController::onSetServerIP(std::string)
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onStartAudioShare()
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onCloseAudioShare()
 {
-    //TODO:
+    // TODO:
 }
 std::vector<std::string> TaskController::onRequireAudioOutputDevices()
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onSelectAudioOutputDevice(int)
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onSetMute(bool)
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onSelectAudioInputDevice(int)
 {
-    //TODO:
+    // TODO:
 }
 std::vector<std::string> TaskController::onRequireAudioInputDevices()
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onCommitAnswer()
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onFocusChange(bool)
 {
-    //TODO:
+    // TODO:
 }
 //教师端
 void TaskController::onRaiseTest()
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onAskStudent()
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onAskStudent(std::string)
 {
-    //TODO:
+    // TODO:
 }
 void TaskController::onMicControl(bool)
 {
-    //TODO:
+    // TODO:
 }
