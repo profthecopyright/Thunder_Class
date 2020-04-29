@@ -1,0 +1,231 @@
+---
+# true: 关闭所有规则
+DisableFormat: false
+
+# C++ 语言
+Language:   Cpp
+Standard:   Cpp11
+
+
+## 2. 编码规范正文 =================================
+## 2.1 格式 ---------------------------------------
+
+
+## 2.1.1* [建议] 空行的使用
+
+# 要保留空行这里就不能设为 0
+# unsigned: 允许保留的最大连续空行数
+MaxEmptyLinesToKeep: 2
+
+# 这个我不知道有啥必要，关了
+# true 保留代码块内部开头的空行
+KeepEmptyLinesAtTheStartOfBlocks: false
+
+
+## 2.1.2 哪里应该使用空格
+
+#> 二元操作符，在其两边各加一个空格
+# true 赋值运算加空格
+SpaceBeforeAssignmentOperators: true
+
+#> 控制语句 if, for, while, switch 和之后的 ( 之间加一个空格
+# ControlStatements 仅在控制流关键字的括号前加空格
+SpaceBeforeParens: ControlStatements
+
+# true: for 后面加空格
+SpaceBeforeRangeBasedForLoopColon: true
+
+# `//` 型注释前的空格数
+SpacesBeforeTrailingComments: 1
+
+
+## 2.1.3 哪里不应该使用空格
+
+#> 不要在引用操作符前后使用空格。引用操作符指 . 和 ->，以及 []
+# false 第一个 `[]` 前不加空格（之后的默认都不加）
+SpaceBeforeSquareBrackets: false
+
+# false `[]` 内部首尾不加空格
+SpacesInSquareBrackets: false
+
+#> 不要在一元操作符和其操作对象之间使用空格
+# false `!` 后面不加空格
+SpaceAfterLogicalNot: false
+
+## 没说加的都不加吧
+# false `template` 后面不加空格
+SpaceAfterTemplateKeyword: false
+
+# false constructor initializer 的 `:` 前不加空格
+SpaceBeforeCtorInitializerColon: false
+
+# false 类继承时 `:` 前不加空格
+SpaceBeforeInheritanceColon: false
+
+# 规范没有明说。空参数写个 `void` 吧
+# false 函数的空参数列表内不加空格
+SpaceInEmptyParentheses: false
+
+# false `<>` 内部首尾不加空格
+SpacesInAngles: false
+
+# true: cpp11 风格的列表，`{}` 内部的首尾不加空格
+Cpp11BracedListStyle: true
+
+# false cpp11 风格的列表，`{}` 前不加空格
+SpaceBeforeCpp11BracedList: false
+
+# false 条件语句的 `()` 内部首位不加空格
+SpacesInConditionalStatement: false
+
+# false `()` 内部首位不加空格
+SpacesInParentheses: false
+
+# 都说了用 cpp 风格的 cast
+# ref: 2.9.3 尽量使用 C++ 风格的类型转换
+# false C 风格的强制类型转的 `()` 后不加空格
+SpaceAfterCStyleCast: false
+
+# false C 风格的强制类型转的 `()` 内部不加空格
+SpacesInCStyleCastParentheses: false
+
+
+## 2.1.4 缩进
+
+#> 以4个空格为一个缩进单位
+IndentWidth:    4
+TabWidth:       4
+UseTab:         Never
+
+
+## 2.1.5 长语句的书写格式
+
+# true: 在操作符后换行，操作数对齐
+AlignOperands: false
+
+# 80 字符应换行
+ColumnLimit: 80
+
+# false 不依靠统计调整自动调整换行符
+DeriveLineEnding: false
+
+# false 不使用 CRLF。建议通过 git 管理换行符
+# UseCRLF: false
+
+# true 注释自动折行
+ReflowComments:  true
+
+
+## 2.1.6 清晰划分控制语句的语句块
+# 此处使用 `{` 和 `}` 均单独占一行的格式
+
+# None: 函数的返回类型不换行
+AlwaysBreakAfterReturnType: None
+
+# 自定义的 `{` 换行
+BreakBeforeBraces: Custom
+# 这里采用默认全部换行
+BraceWrapping:
+  AfterCaseLabel:       true
+  AfterClass:           false
+  AfterControlStatement: Always
+  AfterEnum:            true
+  AfterFunction:        true
+  AfterNamespace:       true
+  AfterStruct:          true
+  AfterUnion:           true
+  AfterExternBlock:     true
+  BeforeCatch:          true
+  BeforeElse:           true
+  # 换行但不缩进括号
+  IndentBraces:         false
+  SplitEmptyFunction:   true
+  SplitEmptyRecord:     true
+  SplitEmptyNamespace:  true
+
+# 在非 `=` 的操作符后换行
+BreakBeforeBinaryOperators: NonAssignment
+
+
+## 2.1.7 一行只写一条语句或标号
+
+# false: 不允许短"case"合并到一行
+AllowShortCaseLabelsOnASingleLine: false
+
+# None:  不允许短"函数"合并到一行
+AllowShortFunctionsOnASingleLine: None
+
+# Never: 不允许短"if分支"合并到一行
+AllowShortIfStatementsOnASingleLine: Never
+
+# false: 不允许短"循环体"合并到一行
+AllowShortLoopsOnASingleLine: false
+
+
+## 2.1.9* [建议] 在表达式中使用括号
+# 这个需要个人注意
+
+## 2.1.10 将操作符 *(Dereferencing)、& 和类型写在一起
+
+# Left: `*` 靠近类型
+PointerAlignment: Left
+
+# false: 不依靠统计调整 `*` 和 `&` 的位置
+DerivePointerAlignment: false
+
+
+## 2.2 注释 ---------------------------------------
+# 大多数都需要手动添加。从略
+
+## 2.2.4* [建议] 对每个空循环体要给出确认性注释
+# Never: 不允许短"block"合并到一行。`}` 始终换行
+AllowShortBlocksOnASingleLine: Never
+
+## 2.2.5* [建议] 对多个 case 共用一个出口的情况给出确认性注释
+# 缩进 case
+IndentCaseLabels: true
+
+## 2.2.7* [建议] 行末注释尽量对齐
+# true: 行尾注释自动对齐
+AlignTrailingComments: true
+
+# true 自动为命名空间添加末尾的成对注释
+FixNamespaceComments: true
+
+
+## 2.3+ 自动格式化无法处理。略 ----------------------
+
+
+## 其他默认选项 ====================================
+# BasedOnStyle:  Microsoft
+# 通过设置 `-fallback-style=none` 可以跳过没设置的格式
+# 想用某个选项就取消注释
+
+# false 多行连续字符串在 `=` 后不换行
+# AlwaysBreakBeforeMultilineStrings: false
+
+# 三元表达式换行后置于行首
+# BreakBeforeTernaryOperators: true
+
+# Preserve: include 保留原状
+IncludeBlocks:   Preserve
+
+# None 宏定义部分不处理缩进
+IndentPPDirectives: None
+
+# false 不对 using 排序
+SortUsingDeclarations: false
+
+# 默认的格式化惩罚值
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 1000
+
+
+# 自带的结束符
+...
