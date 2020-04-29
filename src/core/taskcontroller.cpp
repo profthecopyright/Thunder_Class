@@ -1,84 +1,45 @@
+/***************************************************************
+【文件名】          taskcontroller.cpp
+【功能模块和目的】   管理任务
+【开发者及日期】    未完成
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
+
 #include "taskcontroller.h"
 #include "../gui/guiadaptor.h"
 
+/***************************************************************
+【函数名称】         构造函数
+【函数功能】         设置guiAdaptor指针
+【参数】             无
+【返回值】           无
+【开发者及日期】      cnDengyu, 2020/04/29
+【更改记录】         (若有修改，则必需注明)
+****************************************************************/
 TaskController::TaskController(GUIAdaptor* g)
 {
     this->guiAdaptor = g;
 }
-
+/***************************************************************
+【函数名称】         析构函数
+【函数功能】         无
+【参数】             无
+【返回值】           无
+【开发者及日期】      未完成
+【更改记录】         (若有修改，则必需注明)
+****************************************************************/
 TaskController::~TaskController()
 {
 }
-
-//登录
-void TaskController::onLogin(std::string, std::string)
+/***************************************************************
+【函数名称】         消息处理函数
+【函数功能】         设置guiAdaptor指针
+【参数】             无
+【返回值】           无
+【开发者及日期】      未完成
+【更改记录】         (若有修改，则必需注明)
+****************************************************************/
+int TaskController::respondToGUIMessage(const Message& message)
 {
-    // TODO:
-}
-void TaskController::onExit()
-{
-    // TODO:
-}
-//管理
-void TaskController::onUserListChange()
-{
-    // TODO:
-}
-//学生端
-void TaskController::onSetServerIP(std::string)
-{
-    // TODO:
-}
-void TaskController::onStartAudioShare()
-{
-    // TODO:
-}
-void TaskController::onCloseAudioShare()
-{
-    // TODO:
-}
-std::vector<std::string> TaskController::onRequireAudioOutputDevices()
-{
-    // TODO:
-}
-void TaskController::onSelectAudioOutputDevice(int)
-{
-    // TODO:
-}
-void TaskController::onSetMute(bool)
-{
-    // TODO:
-}
-void TaskController::onSelectAudioInputDevice(int)
-{
-    // TODO:
-}
-std::vector<std::string> TaskController::onRequireAudioInputDevices()
-{
-    // TODO:
-}
-void TaskController::onCommitAnswer()
-{
-    // TODO:
-}
-void TaskController::onFocusChange(bool)
-{
-    // TODO:
-}
-//教师端
-void TaskController::onRaiseTest()
-{
-    // TODO:
-}
-void TaskController::onAskStudent()
-{
-    // TODO:
-}
-void TaskController::onAskStudent(std::string)
-{
-    // TODO:
-}
-void TaskController::onMicControl(bool)
-{
-    // TODO:
+    // TODO
 }

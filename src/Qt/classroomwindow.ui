@@ -53,6 +53,19 @@
      </rect>
     </property>
    </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>550</y>
+      <width>86</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>开麦</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

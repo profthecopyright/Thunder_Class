@@ -1,3 +1,10 @@
+/***************************************************************
+【文件名】          guiadaptor.h
+【功能模块和目的】   GUI包装
+【开发者及日期】    未完成
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
+
 #ifndef WORKFLOW_H
 #define WORKFLOW_H
 
@@ -8,8 +15,8 @@ class TaskController;
 
 /***************************************************************
 【类名】            GUIAdaptor
-【功能】            (必需)
-【接口说明】        (必需)
+【功能】            GUI包装
+【接口说明】        字面意思理解即可
 【开发者及日期】    (必需)
 【更改记录】        (若修改过则必需注明)
 ****************************************************************/
@@ -20,26 +27,28 @@ class GUIAdaptor {
     void create();
     void destroy();
     //登录
-    void onLogin(std::string, std::string);
-    void onExit();
+    bool onLogin(std::string, std::string);
+    bool onExit();
     //管理
-    void onUserListChange();
+    bool onUserListChange(std::vector<std::vector<std::string>>);
     //学生端
-    void onSetServerIP(std::string);
-    void onStartAudioShare();
-    void onCloseAudioShare();
+    bool onSetServerIP(std::string, std::string);
+    bool onStartAudioShare();
+    bool onCloseAudioShare();
     std::vector<std::string> onRequireAudioOutputDevices();
-    void onSelectAudioOutputDevice(int);
-    void onSetMute(bool);
-    void onSelectAudioInputDevice(int);
+    bool onSelectAudioOutputDevice(int);
+    bool onSetMute(bool);
+    bool onSelectAudioInputDevice(int);
     std::vector<std::string> onRequireAudioInputDevices();
-    void onCommitAnswer();
-    void onFocusChange(bool);
+    bool onCommitAnswer();
+    bool onFocusChange(bool);
     //教师端
-    void onRaiseTest();
-    void onAskStudent();
-    void onAskStudent(std::string);
-    void onMicControl(bool);
+    bool onRaiseTest();
+    bool onCloseTest();
+    bool onAskStudent();
+    bool onAskStudent(std::string);
+    bool onCloseAskStudent();
+    bool onMicControl(bool);
 
     virtual void quitApplication() = 0;
     //登录

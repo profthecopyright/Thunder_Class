@@ -1,3 +1,10 @@
+/***************************************************************
+【文件名】          dialogadduser.h
+【功能模块和目的】   管理员窗口中添加新用户的对话框窗口
+【开发者及日期】     cnDengyu, 2020/04/29
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
+
 #ifndef DIALOGADDUSER_H
 #define DIALOGADDUSER_H
 
@@ -8,18 +15,19 @@ namespace Ui
 class DialogAddUser;
 }
 
+class AdminWindow;
 /***************************************************************
-【类名】            (必需)
-【功能】            (必需)
-【接口说明】        (必需)
-【开发者及日期】    (必需)
+【类名】            DialogAddUser
+【功能】            管理员添加用户的对话窗口
+【接口说明】        无接口
+【开发者及日期】     cnDengyu, 2020/04/29
 【更改记录】        (若修改过则必需注明)
 ****************************************************************/
 class DialogAddUser: public QDialog {
     Q_OBJECT
 
   public:
-    explicit DialogAddUser(QWidget* parent = nullptr);
+    explicit DialogAddUser(AdminWindow*, QWidget* parent = nullptr);
     ~DialogAddUser();
 
   private slots:
@@ -30,6 +38,7 @@ class DialogAddUser: public QDialog {
   private:
     Ui::DialogAddUser* ui;
     QWidget* parent;
+    AdminWindow* adminWindow;
 
     void accept() override;
 };

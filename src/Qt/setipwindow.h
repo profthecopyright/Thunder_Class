@@ -1,44 +1,41 @@
 /***************************************************************
-【文件名】          loginwindow.h
-【功能模块和目的】   登录窗口
+【文件名】          setipwindow.h
+【功能模块和目的】   设置服务端ip地址的窗口
 【开发者及日期】     cnDengyu, 2020/04/29
 【更改记录】        (若修改过则必需注明)
 ****************************************************************/
 
-#ifndef LOGINWINDOW_H
-#define LOGINWINDOW_H
+#ifndef SETIPWINDOW_H
+#define SETIPWINDOW_H
 
 #include <QMainWindow>
-#include <string>
 
-QT_BEGIN_NAMESPACE
 namespace Ui
 {
-class LoginWindow;
+class SetIPWindow;
 }
-QT_END_NAMESPACE
 
 class QtGUIAdaptor;
-
 /***************************************************************
-【类名】            LoginWindow
-【功能】            登录窗口
+【类名】            SetIPWindow
+【功能】            学生端设置服务端ip地址的窗口
 【接口说明】        无接口
 【开发者及日期】     cnDengyu, 2020/04/29
 【更改记录】        (若修改过则必需注明)
 ****************************************************************/
-class LoginWindow: public QMainWindow {
+class SetIPWindow: public QMainWindow {
     Q_OBJECT
 
   public:
-    LoginWindow(QtGUIAdaptor*, QWidget* parent = nullptr);
-    ~LoginWindow();
+    explicit SetIPWindow(QtGUIAdaptor*, QWidget* parent = nullptr);
+    ~SetIPWindow();
 
   private slots:
     void on_loginButton_clicked();
 
   private:
-    Ui::LoginWindow* ui;
+    Ui::SetIPWindow* ui;
     QtGUIAdaptor* guiAdaptor;
 };
-#endif // LOGINWINDOW_H
+
+#endif // SETIPWINDOW_H

@@ -1,3 +1,10 @@
+/***************************************************************
+【文件名】          taskcontroller.h
+【功能模块和目的】   管理任务
+【开发者及日期】    未完成
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
+
 #ifndef TASKCONTROLLER_H
 #define TASKCONTROLLER_H
 
@@ -5,10 +12,11 @@
 #include <vector>
 
 class GUIAdaptor;
+class Message;
 
 /***************************************************************
 【类名】            TaskController
-【功能】            (必需)
+【功能】            管理任务
 【接口说明】        (必需)
 【开发者及日期】    (必需)
 【更改记录】        (若修改过则必需注明)
@@ -18,28 +26,7 @@ class TaskController {
   public:
     TaskController(GUIAdaptor*);
     ~TaskController();
-
-    //登录
-    void onLogin(std::string, std::string);
-    void onExit();
-    //管理
-    void onUserListChange();
-    //学生端
-    void onSetServerIP(std::string);
-    void onStartAudioShare();
-    void onCloseAudioShare();
-    std::vector<std::string> onRequireAudioOutputDevices();
-    void onSelectAudioOutputDevice(int);
-    void onSetMute(bool);
-    void onSelectAudioInputDevice(int);
-    std::vector<std::string> onRequireAudioInputDevices();
-    void onCommitAnswer();
-    void onFocusChange(bool);
-    //教师端
-    void onRaiseTest();
-    void onAskStudent();
-    void onAskStudent(std::string);
-    void onMicControl(bool);
+    int respondToGUIMessage(const Message& message);
 
   private:
     GUIAdaptor* guiAdaptor;

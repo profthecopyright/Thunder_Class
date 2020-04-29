@@ -1,13 +1,13 @@
 /***************************************************************
-【文件名】          loginwindow.cpp
-【功能模块和目的】   登录窗口
+【文件名】          setipwindow.cpp
+【功能模块和目的】   设置服务端ip地址的窗口
 【开发者及日期】     cnDengyu, 2020/04/29
 【更改记录】        (若修改过则必需注明)
 ****************************************************************/
 
-#include "loginwindow.h"
+#include "setipwindow.h"
 #include "../gui/qtguiadaptor.h"
-#include "ui_loginwindow.h"
+#include "ui_setipwindow.h"
 
 /***************************************************************
 【函数名称】         构造函数
@@ -17,11 +17,11 @@
 【开发者及日期】      cnDengyu, 2020/04/29
 【更改记录】         (若有修改，则必需注明)
 ****************************************************************/
-LoginWindow::LoginWindow(QtGUIAdaptor* w, QWidget* parent)
-    : QMainWindow(parent), ui(new Ui::LoginWindow)
+SetIPWindow::SetIPWindow(QtGUIAdaptor* g, QWidget* parent)
+    : QMainWindow(parent), ui(new Ui::SetIPWindow)
 {
     ui->setupUi(this);
-    this->guiAdaptor = w;
+    this->guiAdaptor = g;
 }
 /***************************************************************
 【函数名称】         析构函数
@@ -31,22 +31,21 @@ LoginWindow::LoginWindow(QtGUIAdaptor* w, QWidget* parent)
 【开发者及日期】      cnDengyu, 2020/04/29
 【更改记录】         (若有修改，则必需注明)
 ****************************************************************/
-LoginWindow::~LoginWindow()
+SetIPWindow::~SetIPWindow()
 {
     delete ui;
 }
 /***************************************************************
-【函数名称】         点击登录按钮
-【函数功能】         向内部发送登录消息
+【函数名称】         点击申请登录按钮
+【函数功能】         发送设置服务端ip地址的消息
 【参数】             无
 【返回值】           无
 【开发者及日期】      cnDengyu, 2020/04/29
 【更改记录】         (若有修改，则必需注明)
 ****************************************************************/
-void LoginWindow::on_loginButton_clicked()
+void SetIPWindow::on_loginButton_clicked()
 {
-    std::string username, password;
-    username = this->ui->userName->text().toStdString();
-    password = this->ui->userPassword->text().toStdString();
-    this->guiAdaptor->onLogin(username, password);
+    std::string ipAdress = this->ui->lineEdit_ip->text().toStdString();
+    std::string port = this->ui->lineEdit_port->text().toStdString();
+    this->guiAdaptor->onSetServerIP(ipAdress, port);
 }

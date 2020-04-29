@@ -1,3 +1,10 @@
+/***************************************************************
+【文件名】          guiadaptor.cpp
+【功能模块和目的】   GUI包装
+【开发者及日期】    未完成
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
+
 #include "guiadaptor.h"
 #include "../core/taskcontroller.h"
 
@@ -11,74 +18,100 @@ void GUIAdaptor::destroy()
     delete this->taskController;
 }
 //登录
-void GUIAdaptor::onLogin(std::string name, std::string password)
+bool GUIAdaptor::onLogin(std::string name, std::string password)
 {
-    return this->taskController->onLogin(name, password);
+    // TODO
+    return false;
 }
-void GUIAdaptor::onExit()
+bool GUIAdaptor::onExit()
 {
-    return this->taskController->onExit();
+    // TODO
+    return false;
 }
 //管理
-void GUIAdaptor::onUserListChange()
+bool GUIAdaptor::onUserListChange(std::vector<std::vector<std::string>> table)
 {
-    return this->taskController->onUserListChange();
+    // TODO
+    return false;
 }
 //学生端
-void GUIAdaptor::onSetServerIP(std::string ip)
+bool GUIAdaptor::onSetServerIP(std::string ip, std::string port)
 {
-    return this->taskController->onSetServerIP(ip);
+    // TODO
+    return false;
 }
-void GUIAdaptor::onStartAudioShare()
+bool GUIAdaptor::onStartAudioShare()
 {
-    return this->taskController->onStartAudioShare();
+    // TODO
+    return false;
 }
-void GUIAdaptor::onCloseAudioShare()
+bool GUIAdaptor::onCloseAudioShare()
 {
-    return this->taskController->onCloseAudioShare();
+    // TODO
 }
 std::vector<std::string> GUIAdaptor::onRequireAudioOutputDevices()
 {
-    return this->taskController->onRequireAudioOutputDevices();
+    // TODO
+    // return false;
 }
-void GUIAdaptor::onSelectAudioOutputDevice(int rank)
+bool GUIAdaptor::onSelectAudioOutputDevice(int rank)
 {
-    return this->taskController->onSelectAudioOutputDevice(rank);
+    // TODO
+    return false;
 }
-void GUIAdaptor::onSetMute(bool b)
+bool GUIAdaptor::onSetMute(bool b)
 {
-    return this->taskController->onSetMute(b);
+    // TODO
+    return false;
 }
-void GUIAdaptor::onSelectAudioInputDevice(int rank)
+bool GUIAdaptor::onSelectAudioInputDevice(int rank)
 {
-    return this->taskController->onSelectAudioInputDevice(rank);
+    // TODO
+    return false;
 }
 std::vector<std::string> GUIAdaptor::onRequireAudioInputDevices()
 {
-    return this->taskController->onRequireAudioInputDevices();
+    // TODO
+    // return false;
 }
-void GUIAdaptor::onCommitAnswer()
+bool GUIAdaptor::onCommitAnswer()
 {
-    return this->taskController->onCommitAnswer();
+    // TODO
+    return false;
 }
-void GUIAdaptor::onFocusChange(bool ifFocused)
+bool GUIAdaptor::onFocusChange(bool ifFocused)
 {
-    return this->taskController->onFocusChange(ifFocused);
+    // TODO
+    return false;
 }
 //教师端
-void GUIAdaptor::onRaiseTest()
+bool GUIAdaptor::onRaiseTest()
 {
-    return this->taskController->onRaiseTest();
+    // TODO
+    return false;
 }
-void GUIAdaptor::onAskStudent()
+bool GUIAdaptor::onCloseTest()
 {
-    return this->taskController->onAskStudent();
+    // TODO
+    return false;
 }
-void GUIAdaptor::onAskStudent(std::string name)
+bool GUIAdaptor::onAskStudent()
 {
-    return this->taskController->onAskStudent(name);
+    // TODO
+    return false;
 }
-void GUIAdaptor::onMicControl(bool ifAllow)
+bool GUIAdaptor::onAskStudent(std::string name)
 {
-    return this->taskController->onMicControl(ifAllow);
+    // TODO
+    return false;
+}
+bool GUIAdaptor::onCloseAskStudent()
+{
+    // TODO
+    return false;
+}
+bool GUIAdaptor::onMicControl(bool ifAllow)
+{
+    // TODO
+    return false;
 }

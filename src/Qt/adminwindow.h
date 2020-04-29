@@ -1,3 +1,10 @@
+/***************************************************************
+【文件名】          adminwindow.h
+【功能模块和目的】   管理员窗口
+【开发者及日期】     cnDengyu, 2020/04/29
+【更改记录】        (若修改过则必需注明)
+****************************************************************/
+
 #ifndef ADMINWINDOW_H
 #define ADMINWINDOW_H
 
@@ -29,6 +36,13 @@ class AdminWindow: public QMainWindow {
 
   private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_del_clicked();
+
+    void on_pushButton_sav_clicked();
+
+  public:
+    std::vector<std::vector<std::string>> table;
 
   private:
     Ui::AdminWindow* ui;
