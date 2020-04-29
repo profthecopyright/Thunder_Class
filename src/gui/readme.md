@@ -1,1 +1,5 @@
-## 作业要求
+## gui包：GUI相关
+
+GUIAdaptor: 业务流程类，抽象类，负责上层GUI与下层核心业务逻辑之间的通信。依赖于TaskController（拥有其指针）国。GUI对核心的汇报通过调用TaskController定义的各接口方法完成；核心对GUI的汇报通过__raise关键字产生InnerEvent类型的事件实现，该事件将被GUIAdaptor相应，从而改变GUI。main函数直接创建GUIAdaptor对象，由其进一步引导程序启动流程，如创建GUI窗体和TaskController、引导登录等。
+
+QtGUIAdaptor: GUIAdaptor的子类，一种基于Qt的GUI实现（同理还可基于MFC实现；基于Qt的实现也可有不同的界面样式等等）。
